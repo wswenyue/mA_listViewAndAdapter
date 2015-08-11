@@ -1,10 +1,13 @@
 package com.wswenyue.my_baseadapter.utils;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by wswenyue on 2015/8/10.
@@ -50,6 +53,42 @@ public class MyViewHolder {
 
     public View getmConvertView() {
         return mConvertView;
+    }
+
+    /**
+     * 设置TextView的值
+     * @param viewId
+     * @param text
+     * @return
+     */
+    public MyViewHolder setText(int viewId,String text){
+        TextView tv = getView(viewId);
+        tv.setText(text);
+        return this;
+    }
+
+    /**
+     * 设置imageView
+     * @param viewId
+     * @param resId
+     * @return
+     */
+    public MyViewHolder setImageResource(int viewId,int resId){
+        ImageView view = getView(viewId);
+        view.setImageResource(resId);
+        return this;
+    }
+
+    /**
+     * 设置imageView
+     * @param viewId
+     * @param bitmap
+     * @return
+     */
+    public MyViewHolder setImageResource(int viewId,Bitmap bitmap){
+        ImageView view = getView(viewId);
+        view.setImageBitmap(bitmap);
+        return this;
     }
 
 }
